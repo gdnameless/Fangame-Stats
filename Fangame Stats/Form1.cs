@@ -28,10 +28,10 @@ namespace Fangame_Stats
         public Stats()
         {
             InitializeComponent();
-            /*Options.ShowDialog();
+            Options.ShowDialog();
             ForeColor = Options.CText;
             BackColor = Options.CBackground;
-            Font = new Font(FontFamily.GenericMonospace, 14, FontStyle.Bold);*/
+            Font = new Font(FontFamily.GenericMonospace, 14, FontStyle.Bold);
             LastTick = Environment.TickCount;
         }
         
@@ -41,11 +41,7 @@ namespace Fangame_Stats
             LastTick = Environment.TickCount;
             if (Fangames.kaenbyou1.EnsureGame())
             {
-                string s;
-                s = Fangames.kaenbyou1.CurrentStatus;
-                s += Environment.NewLine;
-                s += Fangames.kaenbyou1.GetInformationFromTitle();
-                s += Environment.NewLine;
+                string s = Fangames.kaenbyou1.GetStats();
                 s += "Elapsed Time: " + Interval + "ms";
                 Status.Text = s;
             }
